@@ -40,6 +40,7 @@ app.post('/insertProduct', function(req, res) {
         product_image_url: data.product_image_url,
         product_description: data.product_description,
         product_mrp: data.product_mrp,
+        product_measure: data.product_measure.toLowerCase(),
         category: data.category.toLowerCase().split(' ').join('_'),
         sub_category: data.sub_category.toLowerCase().split(' ').join('_'),
         sub_sub_category: data.micro_category.toLowerCase().split(' ').join('_')
@@ -56,6 +57,7 @@ app.post('/insertProduct', function(req, res) {
             product_name: product.product_name,
             product_image_url: product.product_image_url,
             product_description: product.product_description,
+            product_measure: product.product_measure,
             product_mrp: product.product_mrp,
             sub_sub_category: product.sub_sub_category,
             product_id: ref.id
