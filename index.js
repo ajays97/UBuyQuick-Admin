@@ -43,7 +43,8 @@ app.post('/insertProduct', function(req, res) {
         product_measure: data.product_measure.toLowerCase(),
         category: data.category.toLowerCase().split(' ').join('_'),
         sub_category: data.sub_category.toLowerCase().split(' ').join('_'),
-        sub_sub_category: data.micro_category.toLowerCase().split(' ').join('_')
+        sub_sub_category: data.micro_category.toLowerCase().split(' ').join('_'),
+        product_tags: data.product_tags
     };
 
     if (data.veg === 'on') {
@@ -60,6 +61,7 @@ app.post('/insertProduct', function(req, res) {
             product_measure: product.product_measure,
             product_mrp: product.product_mrp,
             sub_sub_category: product.sub_sub_category,
+            product_tags: product.product_tags,
             product_id: ref.id
         });
     });
